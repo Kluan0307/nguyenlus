@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/backgroud.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px; /* Giới hạn chiều rộng của form */
+            margin: auto; /* Căn giữa form */
+        }
+
+        h1 {
+            color: #343a40;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-control {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            color: #212529;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+        }
+
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Đăng ký tài khoản</h1>
+        <form action="#" method="POST" onsubmit="return handleSubmit(event)">
+            <div class="mb-3">
+                <label for="username" class="form-label">Tên đăng nhập</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <label for="confirm_password" class="form-label">Xác nhận mật khẩu</label>
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Đăng ký</button>
+            </div>
+        </form>
+        
+        <div id="successMessage" class="alert alert-success" style="display: none;">
+            Đăng ký thành công! 
+        </div>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            // Ngăn chặn việc gửi form mặc định
+            event.preventDefault();
+
+            // Lấy thông tin từ form
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var confirm_password = document.getElementById('confirm_password').value;
+
+            // Kiểm tra tính hợp lệ của thông tin (ví dụ: kiểm tra xác nhận mật khẩu)
+            if (password !== confirm_password) {
+                alert("Mật khẩu và xác nhận mật khẩu không khớp!");
+                return false; // Ngăn chặn gửi form
+            }
+
+            // Lưu thông tin vào local storage
+            localStorage.setItem('username', username);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+
+            // Hiển thị thông báo đăng ký thành công
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Xóa dữ liệu trong form (nếu cần)
+            document.getElementById('username').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('confirm_password').value = '';
+
+            // Trả về false để ngăn chặn gửi form
+            return false;
+        }
+    </script>
+</body>
+</html>

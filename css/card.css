@@ -1,0 +1,12 @@
+.card-img-top {
+    height: 300px; /* Định dạng chiều cao của hình ảnh */
+    object-fit: cover; /* Đảm bảo hình ảnh được trải đều trên toàn bộ khung hình */
+}
+.card:hover {
+    transform: scale(1.05); /* Phóng to card lên 105% khi di chuột vào */
+    transition: transform 0.3s ease; /* Tạo hiệu ứng transition mềm mại trong 0.3 giây */
+}
+.card:hover .btn,
+.card:hover .card-title {
+    opacity: 0.8; /* Giảm độ mờ của nút và tiêu đề khi di chuột vào */
+}

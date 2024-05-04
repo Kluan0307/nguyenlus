@@ -1,0 +1,44 @@
+/* Định dạng dropdown menu khi di chuột vào */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Định dạng các mục trong dropdown menu khi di chuột vào */
+.dropdown-item:hover {
+    background-color: #f8f9fa; /* Màu nền khi di chuột vào */
+    color: #212529; /* Màu chữ khi di chuột vào */
+}
+
+/* Định dạng các mục trong dropdown menu */
+.dropdown-item {
+    color: #495057; /* Màu chữ mặc định */
+}
+
+/* Định dạng đường phân chia giữa các mục */
+.dropdown-divider {
+    border-top: 1px solid #e9ecef; /* Màu đường phân chia */
+}
+
+/* Định dạng các mục trong submenu */
+.dropdown-menu .dropdown-item {
+    color: #000; /* Màu chữ */
+    background-color: #fff; /* Màu nền */
+}
+
+/* Định dạng màu chữ khi di chuột vào mục trong submenu */
+.dropdown-menu .dropdown-item:hover {
+    color: #fff; /* Màu chữ khi di chuột vào */
+    background-color: #000; /* Màu nền khi di chuột vào */
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+}
+
